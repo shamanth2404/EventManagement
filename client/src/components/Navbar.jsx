@@ -11,8 +11,8 @@ const Navbar = ({ role }) => {
       <div className="logo">Logo</div>
       <div className="nav-items w-[50%] flex items-center justify-evenly">
         {role === "Organiser"
-          ? OrgItems.map((item) => <Link to={`${item}`}>{item}</Link>)
-          : VendorItems.map((item) => <Link to={`${item}`}>{item}</Link>)}
+          ? OrgItems.map((item) => <Link to={`/${item}`}>{item}</Link>)
+          : VendorItems.map((item) => <Link to={`/${item}`}>{item}</Link>)}
         <CiSearch />
         <Link to="/profile"><CgProfile /></Link>
       </div>

@@ -6,7 +6,7 @@ import { GoSearch } from "react-icons/go";
 const Venues = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar role="Organiser" />
       <VenueFilters />
       <div className="header flex items-center justify-between mt-5 px-5">
         <div>
