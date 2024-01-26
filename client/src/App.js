@@ -8,8 +8,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
+    <BrowserRouter>      
       <Routes>
         <Route path='/' element={<SelectRole />} />
         <Route path='/Vendor' element={<VendorHome />} />
