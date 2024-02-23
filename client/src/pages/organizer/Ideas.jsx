@@ -27,10 +27,10 @@ const Ideas = () => {
   return (
     <div className="mx-5">
       <Navbar role="Organiser" />
-      <h2 className="mt-5">
+      <h2 className="mt-5 px-5">
         Wedding Photos,Lates Trends & Ideas <span>(36000+ Photos)</span>
       </h2>
-      <h6>Browse from latest Wedding Photos, Ideas & Inspiration</h6>
+      <h6 className="px-5">Browse from latest Wedding Photos, Ideas & Inspiration</h6>
       <div className="mx-7 bg-slate-300 mt-5">
         <Slider {...settings}>
           {categories.map((category, index) => (
