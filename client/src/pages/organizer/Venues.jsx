@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import VenueFilters from '../../components/Venue/VenueFilters'
 import Navbar from '../../components/Navbar'
 import { GoSearch } from "react-icons/go";
+import axios from 'axios'
 
-const Venues = () => {
+// useEffect(() => {
+//   // Fetch data from the API
+//   axios.get('http://localhost:5000/api/data')
+//     .then(response => console.log(response.data))
+//     .catch(error => console.error(error));
+// }, []);
+
+const Venues = () => {     
   return (
     <div>
       <Navbar role="Organiser" />

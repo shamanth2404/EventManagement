@@ -3,13 +3,26 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 const VenueFilters = () => {
   const [activeFilter,setActiveFilter] = useState(null);
+  const [selectedFilters, setSelectedFilters] = useState({
+    Locality: '',
+    VenueType: '',
+    Space: '',
+    RentalCost: '',
+    Guests: '',
+    RoomCount: '',
+    Rating: ''
+  });
+  const handleFilterSelection =  (filterTitle, option) => {
+    setSelectedFilters(prevFilters =>({ ...prevFilters, [filterTitle]: option }));    
+  };
+  console.log(selectedFilters);
   const filters = [
     {
       title: "Locality",
       options: ["Bengaluru", "Chennai", "Hyderabad", "Mumbai", "Pune"],
     },
     {
-      title: "Venue Type",
+      title: "VenueType",
       options: ["Banquet Halls", "Lawns", "Hotels", "4 Star", "Pune"],
     },
     {
@@ -17,15 +30,15 @@ const VenueFilters = () => {
       options: ["Indoor", "Outdoor", "Poolside", "Terrace"],
     },
     {
-      title: "Rental Cost",
+      title: "RentalCost",
       options: ["< 25K", "25K - 50K", "50K - 1L", "1L - 2L", "> 2L"],
     },
     {
-      title: "No. of Guests",
+      title: "Guests",
       options: ["< 100", "100 - 250", "250 - 500", "500 - 1000", "> 1000"],
     },    
     {
-      title: "Room Count",
+      title: "RoomCount",
       options: ["< 30", "30 - 60", "60 - 100", "> 100"],
     },
     {
@@ -43,7 +56,7 @@ const VenueFilters = () => {
           </button>
           <div className={`${activeFilter === index ? 'flex' : 'hidden'} absolute h-auto w-auto bg-slate-500 border rounded-md hover:flex flex-col gap-1`}>
             {filter.options.map((option,optionIndex) => (
-              <span key={optionIndex}>{option}</span>
+              <span key={optionIndex} onClick={() => handleFilterSelection(filter.title, option)}>{option}</span>
             ))}
           </div>
         </div>

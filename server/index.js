@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import venueRouter from './Routes/venueRoute.js';
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ const connectDB = async() =>{
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+app.use(venueRouter);
 
 app.get('/' , (req,res) =>{
     res.send("Api is working");
